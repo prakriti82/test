@@ -2,6 +2,9 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import { fileURLToPath } from "url";
+import path, { dirname } from "path";
+
 
 import path from "path";
 
@@ -12,9 +15,11 @@ import messageRoutes from "./routes/message.route.js";
 import { app, server } from "./lib/socket.js";
 
 dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const PORT = process.env.PORT;
-const __dirname = path.resolve();
+
 
 app.use(express.json());
 app.use(cookieParser());
