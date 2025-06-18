@@ -14,7 +14,7 @@ dotenv.config();
 
 // Fix __dirname for ESM
 const __filename = fileURLToPath(import.meta.url);
-const _dirname = path.dirname(_filename);
+const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 5001;
 
